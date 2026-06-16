@@ -26,6 +26,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
+      
      
       <div className={`blob-bg ${step === 2 ? 'step-2-active' : ''}`}></div>
 
@@ -36,7 +37,7 @@ function App() {
             <header className="card-header">
               <span className="breadcrumb">Organizzazione / 01</span>
               <div className="brand-header">
-                <span className="brand-text">Flowlee</span>
+                <span className="brand-cielo">Flowlee</span>
               </div>
               <span className="user-profile">Andrea ::</span>
             </header>
@@ -49,8 +50,10 @@ function App() {
                   o sei un freelance?
                   Diccelo qui sotto.
                 </h1>
+
+                 
                 
-                <div className="5">
+                <div className="ciao">
                   <button className="btn btn-dark" onClick={() => handleSelectType('company')}>
                    Azienda
                   </button>
@@ -76,7 +79,7 @@ function App() {
               <div className="brand-header">
                 <span className="brand-text">Flowlee</span>
               </div>
-              <span className="user-profile">Flavio ::</span>
+              <span className="user-profile">Andrea ::</span>
             </header>
 
             <div className="card-body form-split">
@@ -129,7 +132,7 @@ function App() {
                   )}
 
                   <div className="form-group">
-                    <label htmlFor="description">Di cosa si occupa?</label>
+                    <label htmlFor="description">Di cosa ti occupi??</label>
                     <textarea 
                       id="description"
                       rows={4}
@@ -159,3 +162,5 @@ function App() {
 }
 
 export default App;
+
+
