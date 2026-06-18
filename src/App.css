@@ -30,10 +30,14 @@
 
 }
 
+
+
 .cielo{
-  color: purple ;
+  color: red ;
   font-size: 4;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-left: 10px;
+  
 }
 .brand-header {
   color: purple ;
@@ -46,8 +50,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  padding: 0px; 
+  background: radial-gradient(circle at 50% 50%, #ff5f6d 0%, transparent 90%), 
+              radial-gradient(circle at 50% 50%, #6a11cb 0%, transparent 90%);
+  padding: 0px;
+
 }
 
 
@@ -148,8 +154,8 @@
 }
 
 .btn-dark {
-  background: linear-gradient(to right, red, white);
-  color: black;
+  background: black;
+  color: white;
   margin-right: 30px;
 
   
@@ -161,8 +167,8 @@
 }
 
 .btn-light {
- background: linear-gradient(to right, red, white);
-  color: black;
+ background: black;
+  color: white ;
   border: 1px solid #e5e7eb;
   
  
@@ -193,7 +199,6 @@
   
 }
  
-
 
 /* ================= STRUTTURA DEL FORM (STEP 2) ================= */
 .form-split {
@@ -256,7 +261,6 @@
 }
 
 
-
 .form-group textarea {
   resize: none;
   line-height: 1.5;
@@ -272,7 +276,8 @@
   color: white ;
   margin-top: 40x;
   margin-left: 20px; 
-  background: linear-gradient(to right, red, white);
+  background: white;
+  color: black;
 
 }
 
@@ -281,7 +286,6 @@
 .animate-fade-in {
   animation: fadeIn 0.4s ease-out forwards;
 }
-
 
 
 @keyframes fadeIn {

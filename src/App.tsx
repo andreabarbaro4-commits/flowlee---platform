@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import './App.css';
-import heroImg from './assets/hero.png';
+import omino from './assets/omino.png';
 
 function App() {
   const [step, setStep] = useState<number>(1);
   const [userType, setUserType] = useState<'Azienda' | 'professionista' | null>(null);
+  
 
   // Stati per gestire i campi del form
   const [companyName, setCompanyName] = useState<string>('');
   const [teamSize, setTeamSize] = useState<string>('30-50');
   const [description, setDescription] = useState<string>(
     
-  );
+  )
 
   const handleSelectType = (type: 'Azienda' | 'professionista') => {
     setUserType(type);
@@ -44,16 +45,20 @@ function App() {
             <div className="Uno">
               <div className="Due">
                 <h1 className="main-title">
-                  Iniziamo, senza perdere altro tempo. <br />
+                  Iniziamo dalle basi. <br />
                   Lavori con un'azienda<br />
                   o sei un freelance?
                  
                 </h1>
                   
+
+
+              
+                 
               
                 
                 <div className = "cielo">
-                  <header className = "Si">
+                  <header className = "stella">
                     Abbiamo soluzioni diverse per te.
                     </header>
                     </div>
@@ -77,11 +82,17 @@ function App() {
               </div>
 
 
-              
 
               
 
             
+                  
+                  
+                  
+               
+
+                    
+                   
 
 
 
@@ -92,7 +103,7 @@ function App() {
 
               <div className="content-right">
                 <div className="hero-image-wrapper">
-                  <img src={heroImg} alt="Flowlee Illustration" className="hero-image" />
+                  <img src={omino} alt="Flowlee Illustration" className="hero-image" />
                 </div>
               </div>
             </div>
