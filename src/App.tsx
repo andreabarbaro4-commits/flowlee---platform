@@ -1,31 +1,33 @@
 import { useState } from 'react';
 import './App.css';
-import heroImg from './assets/hero.png';
+import omino from './assets/omino.png';
 
 function App() {
-  const [step, setStep] = useState<number>(1);
-  const [userType, setUserType] = useState<'company' | 'solo' | null>(null);
+  const[step,setStep] = useState<number>(1);
+  const[userType,setuserType] = useState < 'azienda | professionista'|null>(null);
 
-  // Stati per gestire i campi del form
+  
+
+
+  
+
+  
   const [companyName, setCompanyName] = useState<string>('');
   const [teamSize, setTeamSize] = useState<string>('30-50');
   const [description, setDescription] = useState<string>(
+  )
     
-  );
+ const handleSelectType = (type: 'azienda : professionista') => {
+  setuserType(type)
 
-  const handleSelectType = (type: 'company' | 'solo') => {
-    setUserType(type);
-  
-    if (type === 'solo') {
-      setCompanyName('Freelance / Nome');
-      setTeamSize('1-n10');
-    }
-      setCompanyName('Freelance / Nome');
-    setStep(2);
-  };
+  setStep(2)
+ }
+ 
+
+   
 
   return (
-    <div className="app-wrapper">
+    <div className = "appwrapper" >
       
      
       <div className={`blob-bg ${step === 2 ? 'step-2-active' : ''}`}></div>
@@ -35,7 +37,7 @@ function App() {
         {step === 1 && (
           <section className="card-layout step-one animate-fade-in">
             <header className="card-header">
-              <span className="breadcrumb">Organizzazione / 01</span>
+              <span className="breadcrumb">Organizzazione/con chi lavori? </span>
               <div className="brand-header">
                 <span className="brand-cielo">Flowlee</span>
               </div>
@@ -45,27 +47,85 @@ function App() {
             <div className="Uno">
               <div className="Due">
                 <h1 className="main-title">
-                  Iniziamo,senza perdere altro tempo. <br />
+                  Iniziamo dalle basi. <br />
                   Lavori con un'azienda<br />
                   o sei un freelance?
-                  Diccelo qui sotto.
+                 
                 </h1>
+                  
+               
+                  
 
+
+              
+                 
+              
+                
+                <div className = "cielo">
+                  <header className = "stella">
+                    Abbiamo soluzioni diverse per te.
+                    </header>
+                    </div>
                  
                 
+
+
+                  <br />
+                  
+
+                 
+                {/* Contenitore dei bottoni */}
                 <div className="ciao">
-                  <button className="btn btn-dark" onClick={() => handleSelectType('company')}>
+                  <button className="btn btn-dark" onClick={() => handleSelectType('Azienda')}>
                    Azienda
                   </button>
-                  <button className="btn btn-light" onClick={() => handleSelectType('solo')}>
+                  <button className="btn btn-light" onClick={() => handleSelectType('professionista')}>
                     Lavoro da solo
                   </button>
                 </div>
-              </div>
+                </div>
+              
+
+
+              
+
+
+
+
+
+              
+
+             
+               
+              
+
+
+
+             
+
+                
+              
+                    
+
+            
+                  
+                  
+                  
+               
+
+                    
+                   
+
+
+
+
+               
+
+
 
               <div className="content-right">
                 <div className="hero-image-wrapper">
-                  <img src={heroImg} alt="Flowlee Illustration" className="hero-image" />
+                  <img src={omino} alt="Flowlee Illustration" className="hero-image" />
                 </div>
               </div>
             </div>
@@ -75,7 +135,7 @@ function App() {
         {step === 2 && (
           <section className="card-layout step-two animate-fade-in">
             <header className="card-header">
-              <span className="breadcrumb">Organizzazione / 02</span>
+              <span className="breadcrumb">Organizzazione /Dettagli </span>
               <div className="brand-header">
                 <span className="brand-text">Flowlee</span>
               </div>
@@ -85,13 +145,13 @@ function App() {
             <div className="card-body form-split">
           
               <div className="Tre">
-                <span className="box-label">Logo</span>
+                
                 <div className="4">
                   <svg className="company-logo" width="120" height="50">
                     <use href="/icons.svg#icons" /> 
                   </svg>
                   <span className="logo-subtext">
-                    {userType === 'company' ? 'COMPANY' : 'SOLO'}
+                    {userType === 'Azienda' ? 'Azienda' : 'PROFESSIONISTA'}
                   </span>
                 </div>
               </div>
@@ -102,7 +162,7 @@ function App() {
                   
                   <div className="form-group">
                     <label htmlFor="companyName">
-                      {userType === 'company' ? "Nome dell'azienda" : "Nome Professionista"}
+                      {userType === 'Azienda' ? "Nome dell'azienda" : "Nome e cognome"}
                     </label>
                     <input 
                       type="text" 
@@ -113,9 +173,9 @@ function App() {
                   </div>
 
                   {/* Mostra la dimensione del team solo se è un'azienda */}
-                  {userType === 'company' && (
+                  {userType === 'Azienda' && (
                     <div className="form-group">
-                      <label htmlFor="teamSize">Numero persone</label>
+                      <label htmlFor="teamSize">Numero dipendenti</label>
                       <div className="select-wrapper">
                         <select 
                           id="teamSize" 
