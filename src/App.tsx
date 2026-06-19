@@ -3,26 +3,28 @@ import './App.css';
 import omino from './assets/omino.png';
 
 function App() {
-  const [step, setStep] = useState<number>(1);
-  const [userType, setUserType] = useState<'Azienda' | 'professionista' | null>(null);
+  const[step,setStep] = useState<number>(1);
+  const[userType,setuserType] = useState < 'azienda | professionista'|null>(null);
+
   
 
-  // Stati per gestire i campi del form
+
+  
+
+  
   const [companyName, setCompanyName] = useState<string>('');
   const [teamSize, setTeamSize] = useState<string>('30-50');
   const [description, setDescription] = useState<string>(
-    
   )
-
-  const handleSelectType = (type: 'Azienda' | 'professionista') => {
-    setUserType(type);
-  
-    if (type === 'professionista') {
     
-      setTeamSize('1-n10');
-    }
-    setStep(2);
-  };
+ const handleSelectType = (type: 'azienda : professionista') => {
+  setuserType(type)
+
+  setStep(2)
+ }
+ 
+
+   
 
   return (
     <div className = "appwrapper" >
@@ -50,6 +52,8 @@ function App() {
                   o sei un freelance?
                  
                 </h1>
+                  
+               
                   
 
 
@@ -79,11 +83,29 @@ function App() {
                     Lavoro da solo
                   </button>
                 </div>
-              </div>
+                </div>
+              
+
+
+              
+
+
 
 
 
               
+
+             
+               
+              
+
+
+
+             
+
+                
+              
+                    
 
             
                   
