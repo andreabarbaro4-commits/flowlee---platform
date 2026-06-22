@@ -2,39 +2,39 @@ import { useState } from 'react';
 import './App.css';
 import omino from './assets/omino.png';
 
-function App() {
-  const[step,setStep] = useState<number>(1);
-  const[userType,setuserType] = useState < 'azienda | professionista'|null>(null);
+function App() { 
+ const[cielo,setCielo] = useState<number>(1);
+ const[stella,setStella] = useState<'azienda |professionista'|null>(null);
 
-  
+ 
 
 
-  
 
-  
+
+
+
+
   const [companyName, setCompanyName] = useState<string>('');
   const [teamSize, setTeamSize] = useState<string>('30-50');
   const [description, setDescription] = useState<string>(
   )
-    
- const handleSelectType = (type: 'azienda : professionista') => {
-  setuserType(type)
 
-  setStep(2)
- }
- 
+const handleSelectType = (type: 'azienda |proffessionista') => {
+  setStella(type)
 
+setCielo(2);
+}
    
 
   return (
     <div className = "appwrapper" >
       
      
-      <div className={`blob-bg ${step === 2 ? 'step-2-active' : ''}`}></div>
+      <div className={`blob-bg ${cielo === 2 ? 'step-2-active' : ''}`}></div>
 
       <main className="app-container">
         
-        {step === 1 && (
+        {cielo === 1 && (
           <section className="card-layout step-one animate-fade-in">
             <header className="card-header">
               <span className="breadcrumb">Organizzazione/con chi lavori? </span>
@@ -84,46 +84,40 @@ function App() {
                   </button>
                 </div>
                 </div>
-              
 
-
-              
-
-
-
-
-
-              
-
-             
                
               
+              
 
 
+               
+        
+      
+                   
+                 
+               
+                
+ 
 
-             
+                 
+                  
+                
+
+              
+                
+
+               
 
                 
+
+
+                 
+
+
               
-                    
 
-            
-                  
-                  
-                  
-               
-
-                    
-                   
-
-
-
-
-               
-
-
-
-              <div className="content-right">
+             
+                 <div className="content-right">
                 <div className="hero-image-wrapper">
                   <img src={omino} alt="Flowlee Illustration" className="hero-image" />
                 </div>
@@ -132,7 +126,7 @@ function App() {
           </section>
         )}
 
-        {step === 2 && (
+        {cielo === 2 && (
           <section className="card-layout step-two animate-fade-in">
             <header className="card-header">
               <span className="breadcrumb">Organizzazione /Dettagli </span>
@@ -151,7 +145,7 @@ function App() {
                     <use href="/icons.svg#icons" /> 
                   </svg>
                   <span className="logo-subtext">
-                    {userType === 'Azienda' ? 'Azienda' : 'PROFESSIONISTA'}
+                    {stella === 'Azienda' ? 'Azienda' : 'PROFESSIONISTA'}
                   </span>
                 </div>
               </div>
@@ -162,7 +156,7 @@ function App() {
                   
                   <div className="form-group">
                     <label htmlFor="companyName">
-                      {userType === 'Azienda' ? "Nome dell'azienda" : "Nome e cognome"}
+                      {stella=== 'Azienda' ? "Nome dell'azienda" : "Nome e cognome"}
                     </label>
                     <input 
                       type="text" 
@@ -173,7 +167,7 @@ function App() {
                   </div>
 
                   {/* Mostra la dimensione del team solo se è un'azienda */}
-                  {userType === 'Azienda' && (
+                  {stella === 'Azienda' && (
                     <div className="form-group">
                       <label htmlFor="teamSize">Numero dipendenti</label>
                       <div className="select-wrapper">
@@ -203,7 +197,7 @@ function App() {
 
                   
                   <div className="form-actions">
-                    <button type="button" className="btn btn-light" onClick={() => setStep(1)}>
+                    <button type="button" className="btn btn-light" onClick={() => setCielo(1)}>
                       Torna Indietro
                     </button>
                     <button type="submit" className="btn btn-dark">
