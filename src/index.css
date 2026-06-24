@@ -1,104 +1,42 @@
-/* Struttura generale */
+/*
+ * Global stylesheet — Tailwind CSS v4 entry point.
+ *
+ * Preflight (Tailwind's opinionated base reset) is intentionally NOT imported.
+ * Flowlee ships its own universal reset (the `*` rule below), and layering
+ * Preflight on top of it would change the rendered output (button/heading/form
+ * normalisation, etc.). To guarantee pixel-identical output we import only the
+ * `theme` and `utilities` layers and keep the original reset verbatim.
+ *
+ * See: https://tailwindcss.com/docs/preflight#disabling-preflight
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-.app-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f9f9f9;
-  padding: 20px;
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* Expose the card transition as a first-class `animate-fade-in` utility. */
+@theme {
+  --animate-fade-in: fade-in 0.4s ease-out forwards;
 }
 
-.app-container {
-  width: 100%;
-  max-width: 900px;
+/* Original application reset — applied to every element, including form
+ * controls, which is why Inter is set here rather than only on `body`. */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+  }
 }
 
-/* Layout della card */
-.card-layout {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* Il contenitore principale dove applichi il FLEX */
-.Uno {
-  display: flex; /* Qui dividiamo la parte sinistra (testo/bottoni) e destra (immagine) */
-  gap: 40px;
-  align-items: center;
-}
-
-.Due {
-  flex: 1; /* Prende lo spazio disponibile */
-}
-
-.content-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-/* Gestione dei bottoni */
-.5 {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-/* Layout Form (Step 2) */
-.form-split {
-  display: flex;
-  gap: 50px;
-}
-
-.Tre {
-  flex: 0 0 200px; /* Larghezza fissa per il logo */
-}
-
-.form-container-box {
-  flex: 1;
-}
-
-/* Stile dei campi form */
-.form-group {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column; /* Impila etichetta e input verticalmente */
-}
-
-.form-group label {
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-input, textarea, select {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-/* Azioni form */
-.form-actions {
-  display: flex;
-  gap: 15px;
-  margin-top: 30px;
-}
-
-/* Utility bottoni */
-.btn {
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  border: none;
-}
-
-.btn-dark { background: #000; color: #fff; }
-.btn-light { background: #eee; color: #000; }
-
-.hero-image {
-  max-width: 100%;
-  height: auto;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
